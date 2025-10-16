@@ -1,5 +1,5 @@
 #include <LiquidCrystal.h>
-LiquidCrystal lcd(12, 11, 10, 9, 8, 7);
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
 int lmPin = A0;
 int buttonPin = 7;
@@ -32,8 +32,8 @@ void loop() {
   lastButtonState = btn;
 
   int inputTemp = analogRead(lmPin);
-  int tempC = (inputTemp * 500) / 1023;
-  int tempDisplay;
+  long tempC = (long)inputTemp * 500 / 1023;
+  long tempDisplay = 0;
 
   if (show) {
     tempDisplay = tempC;
@@ -56,11 +56,12 @@ void loop() {
     digitalWrite(ledGreen, 0);
     digitalWrite(ledYellow, 1);
     digitalWrite(ledRed, 0);
-  } else {
+  } 
+  else {
     digitalWrite(ledGreen, 0);
     digitalWrite(ledYellow, 0);
     digitalWrite(ledRed, 1);
   }
 
-  delay(500);
+
 }
