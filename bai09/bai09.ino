@@ -2,10 +2,10 @@
 LiquidCrystal lcd(12, 11, 10, 9, 8, 7);
 
 int lmPin = A0;
-int buttonPin = 2;
-int ledGreen = 3;
-int ledYellow = 4;
-int ledRed = 5;
+int buttonPin = 7;
+int ledGreen = 0;
+int ledYellow = 1;
+int ledRed = 8;
 
 bool show = true;
 bool lastButtonState = 0;
